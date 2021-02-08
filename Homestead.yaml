@@ -1,0 +1,25 @@
+---
+ip: "192.168.11.10"
+memory: 2048
+cpus: 1
+provider: virtualbox
+elasticsearch: 5
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+
+    - map: ~/Sites/apl/apl-csv-handler
+      to: /var/www/apl.test/apl/
+
+sites:
+    - map: apl.test
+      to: /var/www/apl.test/apl/public
+      php: "7.3"
+
+databases:
+    - homestead
+    - apl
